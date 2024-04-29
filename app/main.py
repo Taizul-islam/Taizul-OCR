@@ -1,6 +1,8 @@
+import uvicorn
 from fastapi import FastAPI, File, UploadFile
 import easyocr
 import os
+from os import getenv
 import multipart
 
 app = FastAPI()
@@ -33,3 +35,8 @@ async def root(uploaded_file: UploadFile = File(...)):
 @app.get("/hello/{name}")
 async def say_hello(name: str):
     return {"message": f"Hello {name}"}
+
+
+if __name__ == "__main__":
+    post = int(getenv("PORT", 8000))
+    uvicorn.run("app.main:app", host="0.0.0.0", port=post)
