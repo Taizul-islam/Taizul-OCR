@@ -1,3 +1,4 @@
 fastapi~=0.110.2
 uvicorn
 easyocr~=1.7.1
+python-multipart

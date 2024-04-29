@@ -1,6 +1,7 @@
 from fastapi import FastAPI, File, UploadFile
 import easyocr
 import os
+import multipart
 
 app = FastAPI()
 
